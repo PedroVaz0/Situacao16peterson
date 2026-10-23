@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Simplificado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quadro Kanban</h1>
+        <form class="add-task-form" id="taskForm">
+            <input type="text" id="taskInput" placeholder="Digite uma nova tarefa..." required autocomplete="off">
+            <button type="submit" class="btn-add">+ Criar</button>
+        </form>
+    </header>
+
+    <main class="board">
+        <div class="column" data-status="todo" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <div class="column-title">
+                <span>A Fazer</span>
+                <span class="count-badge" id="count-todo">0</span>
+            </div>
+            <div class="task-list" id="list-todo"></div>
+        </div>
+
+        <div class="column" data-status="in-progress" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <div class="column-title">
+                <span>Em Progresso</span>
+                <span class="count-badge" id="count-in-progress">0</span>
+            </div>
+            <div class="task-list" id="list-in-progress"></div>
+        </div>
+
+        <div class="column" data-status="done" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <div class="column-title">
+                <span>Concluído</span>
+                <span class="count-badge" id="count-done">0</span>
+            </div>
+            <div class="task-list" id="list-done"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
